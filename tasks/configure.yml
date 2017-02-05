@@ -1,0 +1,16 @@
+---
+
+- name: Install Home Assistant supervisor config
+  template:
+    src: homeassistant.conf.j2
+    dest: /etc/supervisor/conf.d/homeassistant.conf
+    mode: 0644
+  notify:
+    - reload supervisor
+
+- meta: flush_handlers
+
+- name: Make sure Homeassistanat is running
+  supervisorctl:
+    name: homeassistant
+    state: started

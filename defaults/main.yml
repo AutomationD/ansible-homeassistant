@@ -1,0 +1,5 @@
+---
+homeassistant_manage_user: false
+homeassistant_user: root
+homeassistant_group: root
+homeassistant_dir: /opt/homeassistant
